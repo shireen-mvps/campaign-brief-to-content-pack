@@ -14,7 +14,7 @@
     "react-dom": "^18.3.0",
     "@supabase/supabase-js": "^2.47.0",
     "@supabase/ssr": "^0.5.2",
-    "@anthropic-ai/sdk": "^0.34.0"
+    "@anthropic-ai/sdk": "^0.78.0"
   },
   "devDependencies": {
     "typescript": "^5.0.0",

@@ -52,6 +52,8 @@ export function BriefForm() {
       }
 
       const { id } = await res.json()
+      const existing = JSON.parse(localStorage.getItem('guest_campaign_ids') || '[]')
+      localStorage.setItem('guest_campaign_ids', JSON.stringify([...existing, id]))
       router.push(`/result/${id}`)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Something went wrong')

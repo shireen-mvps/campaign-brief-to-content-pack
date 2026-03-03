@@ -1,7 +1,24 @@
 'use client'
 
+import { useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { createSupabaseBrowserClient } from '@/lib/supabase'
+
+export function ClaimCampaigns() {
+  const router = useRouter()
+
+  useEffect(() => {
+    const ids: string[] = JSON.parse(localStorage.getItem('guest_campaign_ids') || '[]')
+    if (ids.length === 0) return
+
+    Promise.all(ids.map(id => fetch(`/api/campaigns/${id}`, { method: 'PATCH' }))).then(() => {
+      localStorage.removeItem('guest_campaign_ids')
+      router.refresh()
+    })
+  }, [router])
+
+  return null
+}
 
 export function SignOutButton() {
   const router = useRouter()

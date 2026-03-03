@@ -15,7 +15,7 @@ const dmSans = DM_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'Campaign Brief to Content Pack',
+  title: 'Campaign Brief → Content Pack',
   description: 'Turn a campaign brief into a full content pack in seconds.',
 }
 

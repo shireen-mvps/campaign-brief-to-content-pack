@@ -16,7 +16,7 @@ export default function LandingPage() {
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-zinc-900">
         <span className="font-display font-bold text-sm tracking-tight text-amber-400">
-          Brief→Pack
+          Campaign Brief → Content Pack
         </span>
         <Link
           href="/login"
@@ -84,7 +84,7 @@ export default function LandingPage() {
 
       {/* Footer */}
       <footer className="text-center py-6 text-xs text-zinc-700 border-t border-zinc-900">
-        Campaign Brief to Content Pack — Free to generate. Sign in to save.
+        Campaign Brief → Content Pack — Free to generate. Sign in to save.
       </footer>
     </div>
   )

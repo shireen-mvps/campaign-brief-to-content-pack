@@ -6,7 +6,7 @@ export default function NewCampaignPage() {
     <div className="min-h-screen bg-zinc-950">
       <nav className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-zinc-900">
         <Link href="/" className="font-display font-bold text-sm tracking-tight text-amber-400">
-          Brief→Pack
+          Campaign Brief → Content Pack
         </Link>
         <Link
           href="/login"

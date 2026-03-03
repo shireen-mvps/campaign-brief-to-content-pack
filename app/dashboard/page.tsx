@@ -1,5 +1,5 @@
 import { createSupabaseServerClient } from '@/lib/supabase'
-import { SignOutButton, DeleteButton } from '@/components/dashboard/Actions'
+import { SignOutButton, DeleteButton, ClaimCampaigns } from '@/components/dashboard/Actions'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
@@ -21,9 +21,10 @@ export default async function DashboardPage() {
 
   return (
     <div className="min-h-screen bg-zinc-950">
+      <ClaimCampaigns />
       <nav className="flex items-center justify-between px-6 md:px-12 py-5 border-b border-zinc-900">
         <Link href="/" className="font-display font-bold text-sm tracking-tight text-amber-400">
-          Brief→Pack
+          Campaign Brief → Content Pack
         </Link>
         <div className="flex items-center gap-4">
           <span className="text-sm text-zinc-500 hidden sm:block">{name}</span>

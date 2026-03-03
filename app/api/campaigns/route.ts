@@ -1,4 +1,4 @@
-import { createSupabaseServerClient } from '@/lib/supabase'
+import { createSupabaseServerClient, createSupabaseServiceClient } from '@/lib/supabase'
 import { generateContentPack } from '@/lib/claude'
 import type { BriefData } from '@/lib/claude'
 import { NextResponse } from 'next/server'
@@ -35,11 +35,12 @@ export async function POST(request: Request) {
   let output_data
   try {
     output_data = await generateContentPack(brief)
-  } catch {
+  } catch (err) {
+    console.error('Content generation error:', err)
     return NextResponse.json({ error: 'Content generation failed. Please try again.' }, { status: 500 })
   }
 
-  const { data: campaign, error } = await supabase
+  const { data: campaign, error } = await createSupabaseServiceClient()
     .from('campaigns')
     .insert({
       user_id: user?.id ?? null,
@@ -52,6 +53,7 @@ export async function POST(request: Request) {
     .single()
 
   if (error) {
+    console.error('Supabase insert error:', error)
     return NextResponse.json({ error: 'Failed to save campaign' }, { status: 500 })
   }
 

@@ -21,7 +21,7 @@ export default function LoginPage() {
           href="/"
           className="font-display font-bold text-amber-400 text-sm tracking-tight block mb-12"
         >
-          ← Brief→Pack
+          ← Campaign Brief → Content Pack
         </Link>
 
         <h1 className="font-display font-bold text-3xl text-zinc-100 mb-2">Sign in</h1>
